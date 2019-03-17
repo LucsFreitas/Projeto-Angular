@@ -5,7 +5,7 @@ import { DetailComponent } from './detail/detail.component';
 import { ModuleWithProviders } from '@angular/compiler/src/core';
 
 const routes: Routes = [
-  { path: 'professores', component: HomeComponent },
+  { path: '', component: HomeComponent },
   { path: 'professor/:id', component: DetailComponent },
 ];
 

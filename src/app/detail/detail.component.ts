@@ -35,13 +35,13 @@ export class DetailComponent implements OnInit {
     this.professor = this.professorService.getByMatricula(this.matricula);
 
     if (!this.professor) {
-      this.router.navigate(['professores']);
+      this.router.navigate(['']);
     }
 
     this.disciplinas = this.disciplinaService.getDisciplinasPorProfessor(1);
   }
 
   voltar() {
-    this.router.navigate(['professores']);
+    this.router.navigate(['']);
   }
 }
