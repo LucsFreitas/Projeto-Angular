@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Professor } from '../shared/professor';
 import { DisciplinasService } from '../shared/disciplinas.service';
 import { Disciplina } from '../shared/disciplina';
+import { Subscription } from 'rxjs';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ProfessoresService } from '../shared/professores.service';
 
 @Component({
   selector: 'app-detail',
@@ -14,19 +17,31 @@ export class DetailComponent implements OnInit {
   professor: Professor;
   disciplinas: Disciplina[];
   displayedColumns: string[] = ['codigo', 'descricao', 'qtdCreditos'];
+  inscricao: Subscription;
+  matricula: string;
 
   constructor(
-    private disciplinaService: DisciplinasService
-  ) {
+    private disciplinaService: DisciplinasService,
+    private professorService: ProfessoresService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) { }
+
+  ngOnInit() {
+    this.inscricao = this.route.params.subscribe(params => {
+      this.matricula = params.id;
+    });
+
+    this.professor = this.professorService.getByMatricula(this.matricula);
+
+    if (!this.professor) {
+      this.router.navigate(['professores']);
+    }
+
     this.disciplinas = this.disciplinaService.getDisciplinasPorProfessor(1);
   }
 
-  ngOnInit() {
-    this.professor = {
-      matricula: '51340-5',
-      nome: 'Fernando Wanderley',
-      email: 'fernando@unicap.br'
-    };
+  voltar() {
+    this.router.navigate(['professores']);
   }
-
 }

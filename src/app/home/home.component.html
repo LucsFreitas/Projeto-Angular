@@ -30,6 +30,7 @@
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let prof; columns: displayedColumns;" (click)="clikTable(prof.matricula)"></tr>
+    <tr mat-row *matRowDef="let prof; columns: displayedColumns;"
+    [routerLink]="['/professor', prof.matricula]"></tr>
   </table>
 </div>

@@ -8,7 +8,7 @@ import { HomeModule } from './home/home.module';
 import { HomeComponent } from './home/home.component';
 import { MatTableModule, MatGridListModule, MatButtonModule, MatToolbarModule } from '@angular/material';
 import { DetailComponent } from './detail/detail.component';
-import { AppRoutingModule } from './app.routing';
+import { routing } from './app.routing';
 
 @NgModule({
   declarations: [
@@ -18,13 +18,13 @@ import { AppRoutingModule } from './app.routing';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
     HomeModule,
     MatTableModule,
     MatGridListModule,
     MatButtonModule,
-    MatToolbarModule
+    MatToolbarModule,
+    routing
   ],
   providers: [],
   bootstrap: [

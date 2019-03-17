@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfessoresService } from '../shared/professores.service';
 import { Professor } from '../shared/professor';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -13,15 +14,15 @@ export class HomeComponent implements OnInit {
   urlUnicap2015 = 'http://www.unicap.br/ppgd/wp-content/uploads/2016/12/marca_2025_altaresol.png';
 
   constructor(
-    private professoresService: ProfessoresService
-  ) {
+    private professoresService: ProfessoresService,
+    private router: Router
+  ) { }
+
+  ngOnInit() {
     this.professores = this.professoresService.getListaProfessores();
   }
 
-  ngOnInit() {
-  }
-
-  clikTable(obj) {
-    console.log(obj);
+  onClick(id) {
+    this.router.navigate(['professor/:id/disciplinas', { queryParams: { id }}]);
   }
 }
