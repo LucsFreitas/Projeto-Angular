@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfessoresService } from '../shared/professores.service';
 import { Professor } from '../shared/professor';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -15,14 +14,9 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private professoresService: ProfessoresService,
-    private router: Router
   ) { }
 
   ngOnInit() {
     this.professores = this.professoresService.getListaProfessores();
-  }
-
-  onClick(id) {
-    this.router.navigate(['professor/:id/disciplinas', { queryParams: { id }}]);
   }
 }

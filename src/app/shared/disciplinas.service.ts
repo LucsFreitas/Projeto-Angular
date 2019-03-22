@@ -5,10 +5,13 @@ import { Disciplina } from './disciplina';
   providedIn: 'root'
 })
 export class DisciplinasService {
+  disciplinas: Disciplina[];
 
-  constructor() { }
+  constructor() {
+    this.disciplinas = this.inicializaDisciplinas();
+  }
 
-  getDisciplinasPorProfessor(id: number): Disciplina[] {
+  inicializaDisciplinas() {
     return [
       {
         codigo: 'INF1904',
@@ -25,6 +28,15 @@ export class DisciplinasService {
         descricao: 'Programação Funcional',
         qtdCreditos: 4
       },
+      {
+        codigo: 'INF2004',
+        descricao: 'Introdução a Programação',
+        qtdCreditos: 4
+      },
     ];
+  }
+
+  getDisciplinasPorProfessor(id: number): Disciplina[] {
+    return this.disciplinas;
   }
 }
