@@ -1,0 +1,46 @@
+<div style="margin-left:10%; margin-right:10%;">
+  <mat-grid-list cols="3" rowHeight="4:1">
+    <mat-grid-tile>
+      <div>
+        <img *ngIf="urlProfessor" [src]="urlProfessor" height="180px" width="150px">
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div>
+        <p>Nome: {{ professor.nome }}</p>
+        <p>Matricula: {{ professor.matricula }}</p>
+        <p>Email: {{ professor.email }}</p>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <div>
+          <img [src]="urlUnicap2015" height="100px" width="150px">
+        </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <br>
+  <br>
+  <br>
+  <table mat-table [dataSource]="disciplinas" class="mat-elevation-z6">
+    <ng-container matColumnDef="codigo">
+      <th mat-header-cell *matHeaderCellDef> Código </th>
+      <td mat-cell *matCellDef="let disc"> {{ disc.codigo }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="descricao">
+      <th mat-header-cell *matHeaderCellDef> Descrição </th>
+      <td mat-cell *matCellDef="let disc"> {{ disc.descricao }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="qtdCreditos">
+      <th mat-header-cell *matHeaderCellDef> Quantidade de Créditos </th>
+      <td mat-cell *matCellDef="let disc"> {{ disc.qtdCreditos }} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let disc; columns: displayedColumns;"></tr>
+  </table>
+  
+  <br>
+  <button mat-raised-button color="primary" (click)="voltar()">Voltar</button>
+</div>
