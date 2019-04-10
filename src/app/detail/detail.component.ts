@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Professor } from '../shared/professor';
-import { DisciplinasService } from '../shared/disciplinas.service';
-import { Disciplina } from '../shared/disciplina';
+import { Professor } from '../shared/model/professor';
+import { DisciplinasService } from '../shared/services/disciplinas.service';
+import { Disciplina } from '../shared/model/disciplina';
 import { Subscription } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ProfessoresService } from '../shared/professores.service';
+import { ProfessoresService } from '../shared/services/professores.service';
 
 @Component({
   selector: 'app-detail',
@@ -32,13 +32,17 @@ export class DetailComponent implements OnInit {
       this.matricula = params.id;
     });
 
-    this.professor = this.professorService.getByMatricula(this.matricula);
+    this.professorService.getByMatricula(this.matricula)
+      .subscribe( professor => {
+        if (!professor) {
+          this.router.navigate(['']);
+        }
+        this.professor = professor;
+      });
 
-    if (!this.professor) {
-      this.router.navigate(['']);
-    }
 
-    this.disciplinas = this.disciplinaService.getDisciplinasPorProfessor(1);
+    this.disciplinaService.getListaDisciplinas()
+      .subscribe( disciplinas => this.disciplinas = disciplinas );
   }
 
   voltar() {

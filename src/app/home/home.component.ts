@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ProfessoresService } from '../shared/professores.service';
-import { Professor } from '../shared/professor';
+import { ProfessoresService } from '../shared/services/professores.service';
+import { Professor } from '../shared/model/professor';
 
 @Component({
   selector: 'app-home',
@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.professores = this.professoresService.getListaProfessores();
+    this.professoresService.getListaProfessores()
+      .subscribe( response => this.professores = response );
   }
 }

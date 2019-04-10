@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { MatTableModule, MatGridListModule, MatButtonModule, MatToolbarModule } from '@angular/material';
 import { DetailComponent } from './detail/detail.component';
 import { routing } from './app.routing';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { routing } from './app.routing';
     BrowserModule,
     BrowserAnimationsModule,
     HomeModule,
+    HttpClientModule,
     MatTableModule,
     MatGridListModule,
     MatButtonModule,
