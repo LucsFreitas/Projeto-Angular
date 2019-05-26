@@ -4,9 +4,7 @@ import { ProfessoresService } from '../shared/services/professores.service';
 import { MatButtonModule, MatCheckboxModule, MatTableModule, MatGridListModule } from '@angular/material';
 
 @NgModule({
-  declarations: [
-    // HomeComponent
-  ],
+  declarations: [],
   imports: [
     CommonModule,
     MatButtonModule,
@@ -18,4 +16,4 @@ import { MatButtonModule, MatCheckboxModule, MatTableModule, MatGridListModule }
     ProfessoresService
   ]
 })
-export class HomeModule { }
+export class ListaProfessoresModule { }

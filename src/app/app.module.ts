@@ -4,23 +4,23 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HomeModule } from './home/home.module';
-import { HomeComponent } from './home/home.component';
+import { ListaProfessoresModule } from './lista-professores/lista-professores.module';
+import { ListaProfessoresComponent } from './lista-professores/lista-professores.component';
 import { MatTableModule, MatGridListModule, MatButtonModule, MatToolbarModule } from '@angular/material';
-import { DetailComponent } from './detail/detail.component';
+import { DetalhesProfessorComponent } from './lista-professores/detalhes-professor/detalhes-professor.component';
 import { routing } from './app.routing';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    DetailComponent
+    ListaProfessoresComponent,
+    DetalhesProfessorComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    HomeModule,
+    ListaProfessoresModule,
     HttpClientModule,
     MatTableModule,
     MatGridListModule,

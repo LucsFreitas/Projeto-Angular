@@ -3,11 +3,11 @@ import { ProfessoresService } from '../shared/services/professores.service';
 import { Professor } from '../shared/model/professor';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-lista-professores',
+  templateUrl: './lista-professores.component.html',
+  styleUrls: ['./lista-professores.component.css']
 })
-export class HomeComponent implements OnInit {
+export class ListaProfessoresComponent implements OnInit {
   professores: Professor[];
   displayedColumns: string[] = ['matricula', 'nome', 'email'];
   urlUnicap2015 = 'http://www.unicap.br/ppgd/wp-content/uploads/2016/12/marca_2025_altaresol.png';

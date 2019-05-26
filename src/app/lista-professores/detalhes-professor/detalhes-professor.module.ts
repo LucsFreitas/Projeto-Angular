@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DisciplinasService } from '../shared/services/disciplinas.service';
+import { DisciplinasService } from '../../shared/services/disciplinas.service';
 
 @NgModule({
   declarations: [],
@@ -11,4 +11,4 @@ import { DisciplinasService } from '../shared/services/disciplinas.service';
     DisciplinasService
   ]
 })
-export class DetailModule { }
+export class DetalhesProfessorModule { }
