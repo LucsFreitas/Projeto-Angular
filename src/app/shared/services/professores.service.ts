@@ -18,4 +18,8 @@ export class ProfessoresService {
   getByMatricula(mat: string): Observable<Professor> {
     return this.http.get<Professor>(`${this.apiUrl}/${mat}`);
   }
+
+  salvar(professor: Professor): Observable<Professor> {
+    return this.http.post<Professor>(this.apiUrl, professor);
+  }
 }

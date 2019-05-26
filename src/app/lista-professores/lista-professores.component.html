@@ -33,4 +33,8 @@
     <tr mat-row *matRowDef="let prof; columns: displayedColumns;"
     [routerLink]="['/professor', prof.matricula]"></tr>
   </table>
+
+  <br>
+  <button style="float:right" mat-raised-button color="primary"
+    (click)="novoProfessor()">Novo Professor</button>
 </div>

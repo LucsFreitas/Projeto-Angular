@@ -19,6 +19,44 @@
     </mat-grid-tile>
   </mat-grid-list>
   <br>
+  <mat-accordion>
+      <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Endereço
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <!-- body do panel -->
+          <div>
+              <mat-form-field style="width: 150px">
+                <input matInput readonly tabIndex="-1" placeholder="CEP" [value]="professor.cep">
+              </mat-form-field>
+              
+              <br>
+              <mat-form-field style="width: 70%">
+                <input readonly tabIndex="-1" matInput placeholder="Rua" [value]="professor.rua">
+              </mat-form-field>
+  
+              <mat-form-field style="width: 22%">
+                <input readonly tabIndex="-1" matInput placeholder="Número" [value]="professor.numero">
+              </mat-form-field>
+
+              <br>
+              <mat-form-field style="width: 30%">
+                <input readonly tabIndex="-1" matInput placeholder="Bairro" [value]="professor.bairro">
+              </mat-form-field>
+  
+              <mat-form-field style="width: 30%">
+                <input readonly tabIndex="-1" matInput placeholder="Cidade" [value]="professor.cidade">
+              </mat-form-field>
+
+              <mat-form-field style="width: 30%">
+                <input readonly tabIndex="-1" matInput placeholder="Estado" [value]="professor.estado">
+              </mat-form-field>
+            </div>
+      </mat-expansion-panel>
+  </mat-accordion>
   <br>
   <br>
   <table mat-table [dataSource]="disciplinas" class="mat-elevation-z6">

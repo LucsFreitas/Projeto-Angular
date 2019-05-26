@@ -5,3 +5,7 @@ p {
 table {
 width: 100%;
 }
+
+mat-form-field {
+    padding: 0px 10px;
+  }

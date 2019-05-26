@@ -1,0 +1,59 @@
+<div style="margin-left:10%; margin-right:10%;">
+    <div style="text-align: center">
+      <h1>Cadastrar Professor</h1>
+    </div>
+
+    <form [formGroup]="form" (ngSubmit)="salvar()">
+      <mat-card class="mat-elevation-z6">
+          <div>
+              <mat-form-field style="width: 150px">
+                <input formControlName="matricula" matInput placeholder="Matricula">
+              </mat-form-field>
+              
+              <br>
+              <mat-form-field style="width: 93%">
+                <input formControlName="nome" matInput placeholder="Nome">
+              </mat-form-field>
+
+              <br>
+              <mat-form-field style="width: 93%">
+                <input formControlName="email" matInput placeholder="Email">
+              </mat-form-field>
+            </div>
+      </mat-card>
+      <br>
+      <mat-card class="mat-elevation-z6">
+          <div>
+              <mat-form-field style="width: 150px">
+                <input formControlName="cep" matInput (blur)="consultaCep()" placeholder="CEP">
+              </mat-form-field>
+              
+              <br>
+              <mat-form-field style="width: 70%">
+                <input formControlName="rua" readonly tabIndex="-1" matInput placeholder="Rua">
+              </mat-form-field>
+  
+              <mat-form-field style="width: 22%">
+                <input formControlName="numero" matInput placeholder="Número">
+              </mat-form-field>
+
+              <br>
+              <mat-form-field style="width: 30%">
+                <input formControlName="bairro" readonly tabIndex="-1" matInput placeholder="Bairro">
+              </mat-form-field>
+  
+              <mat-form-field style="width: 30%">
+                <input formControlName="cidade" readonly tabIndex="-1" matInput placeholder="Cidade">
+              </mat-form-field>
+
+              <mat-form-field style="width: 30%">
+                <input formControlName="estado" readonly tabIndex="-1" matInput placeholder="Estado">
+              </mat-form-field>
+            </div>
+      </mat-card>
+    </form> 
+
+    <br>
+    <button class="mat-elevation-z5" style="float:right" mat-raised-button color="primary"
+    (click)="salvar()" [disabled]="!form.valid">Salvar</button>
+</div>
