@@ -7,7 +7,7 @@ import { Professor} from '../model/professor';
   providedIn: 'root'
 })
 export class ProfessoresService {
-  apiUrl = 'http://localhost:8080/professor';
+  apiUrl = 'https://aw-controle-disciplinas-api.herokuapp.com/professor';
 
   constructor( private http: HttpClient ) { }
 
@@ -15,8 +15,8 @@ export class ProfessoresService {
     return this.http.get<Professor[]>(this.apiUrl);
   }
 
-  getByMatricula(mat: string): Observable<Professor> {
-    return this.http.get<Professor>(`${this.apiUrl}/${mat}`);
+  getByMatricula(id: number): Observable<Professor> {
+    return this.http.get<Professor>(`${this.apiUrl}/${id}`);
   }
 
   salvar(professor: Professor): Observable<Professor> {

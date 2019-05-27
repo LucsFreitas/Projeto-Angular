@@ -18,7 +18,7 @@ export class DetalhesProfessorComponent implements OnInit {
   disciplinas: Disciplina[];
   displayedColumns: string[] = ['codigo', 'descricao', 'qtdCreditos'];
   inscricao: Subscription;
-  matricula: string;
+  professorId: number;
 
   constructor(
     private disciplinaService: DisciplinasService,
@@ -29,10 +29,10 @@ export class DetalhesProfessorComponent implements OnInit {
 
   ngOnInit() {
     this.inscricao = this.route.params.subscribe(params => {
-      this.matricula = params.id;
+      this.professorId = params.id;
     });
 
-    this.professorService.getByMatricula(this.matricula)
+    this.professorService.getByMatricula(this.professorId)
       .subscribe( professor => {
         if (!professor) {
           this.router.navigate(['']);

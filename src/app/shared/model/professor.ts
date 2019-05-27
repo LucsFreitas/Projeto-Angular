@@ -1,4 +1,5 @@
 export class Professor {
+    id: number;
     matricula: string;
     nome: string;
     email: string;

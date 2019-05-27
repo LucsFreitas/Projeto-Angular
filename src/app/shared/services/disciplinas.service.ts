@@ -7,7 +7,7 @@ import { Disciplina } from '../model/disciplina';
   providedIn: 'root'
 })
 export class DisciplinasService {
-  apiUrl = 'http://localhost:8080/disciplina';
+  apiUrl = 'https://aw-controle-disciplinas-api.herokuapp.com/disciplina';
 
   constructor( private http: HttpClient ) { }
 
