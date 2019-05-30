@@ -69,4 +69,8 @@ export class CadastroProfessorComponent implements OnInit {
       });
   }
 
+  cancelar() {
+    this.router.navigate(['']);
+  }
+
 }

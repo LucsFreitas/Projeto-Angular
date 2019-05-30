@@ -54,6 +54,10 @@
     </form> 
 
     <br>
-    <button class="mat-elevation-z5" style="float:right" mat-raised-button color="primary"
-    (click)="salvar()" [disabled]="!form.valid">Salvar</button>
+    <div style="float:right">
+      <button class="mat-elevation-z5" mat-raised-button color="warn"
+      (click)="cancelar()" style="margin-right: 20px">Cancelar</button>
+      <button class="mat-elevation-z5" mat-raised-button color="primary"
+      (click)="salvar()" [disabled]="!form.valid">Salvar</button>
+    </div>
 </div>
