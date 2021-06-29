@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class ListaProfessoresComponent implements OnInit {
   professores: Professor[];
   displayedColumns: string[] = ['matricula', 'nome', 'email'];
-  urlUnicap2015 = 'http://www.unicap.br/ppgd/wp-content/uploads/2016/12/marca_2025_altaresol.png';
+  urlUnicap2015 = 'https://www1.unicap.br/ppgd/wp-content/uploads/2016/12/marca_2025_altaresol.png';
 
   constructor(
     private professoresService: ProfessoresService,

@@ -12,7 +12,7 @@ import { ProfessoresService } from '../../shared/services/professores.service';
   styleUrls: ['./detalhes-professor.component.css']
 })
 export class DetalhesProfessorComponent implements OnInit {
-  urlUnicap2015 = 'http://www.unicap.br/ppgd/wp-content/uploads/2016/12/marca_2025_altaresol.png';
+  urlUnicap2015 = 'https://www1.unicap.br/ppgd/wp-content/uploads/2016/12/marca_2025_altaresol.png';
   urlProfessor = 'https://pngimage.net/wp-content/uploads/2018/06/pessoa-icon-png-4.png';
   professor: Professor;
   disciplinas: Disciplina[];
